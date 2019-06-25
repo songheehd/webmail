@@ -1,0 +1,47 @@
+<%-- 
+    Document   : join.jsp
+    Created on : 2019. 5. 10., 오후 11:39:21
+    Author     : minyeong
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="cse.maven_webmail.control.CommandType" %>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>회원가입</title>
+         <link type="text/css" rel="stylesheet" href="css/main_style.css" />
+    </head>
+    <body>
+        <jsp:include page="header.jsp" />
+        
+        <div id="main">
+            회원가입을 환영합니다. <br> <br>
+
+            <form name="AddUser" action="UserAdmin.do?menu=<%= CommandType.ADD_USER_COMMAND%>"
+                  method="POST">
+                <table border="0" align="left">
+                    <tr>
+                        <td>사용자 ID</td>
+                        <td> <input type="text" name="id" value="" size="20" />  </td>
+                    </tr>
+                    <tr>
+                        <td>암호 </td>
+                        <td> <input type="password" name="password" value="" /> </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="submit" value="등록" name="register" />
+                            <input type="reset" value="초기화" name="reset" />
+                        </td>
+                    </tr>
+                </table>
+
+            </form>
+        </div>
+                  
+        <jsp:include page="footer.jsp" />
+    </body>
+</html>
